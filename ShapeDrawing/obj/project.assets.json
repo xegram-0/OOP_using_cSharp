@@ -1,0 +1,134 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "NUnit/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/nunit.framework.dll": {
+            "related": ".legacy.xml;.xml"
+          },
+          "lib/net8.0/nunit.framework.legacy.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/nunit.framework.dll": {
+            "related": ".legacy.xml;.xml"
+          },
+          "lib/net8.0/nunit.framework.legacy.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/NUnit.props": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NUnit/4.4.0": {
+      "sha512": "7IWJcT9xWNhG9dEGdgAWdH6maCE0eVbeVnizvXACKbAyxbjoJ9+WaEb8qsCTJi3hsb18AJBtoqvWa3G7YYUQfw==",
+      "type": "package",
+      "path": "nunit/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICES.md",
+        "README.md",
+        "THIRD_PARTY_NOTICES.md",
+        "build/NUnit.props",
+        "icon.png",
+        "lib/net462/nunit.framework.dll",
+        "lib/net462/nunit.framework.legacy.dll",
+        "lib/net462/nunit.framework.legacy.xml",
+        "lib/net462/nunit.framework.xml",
+        "lib/net6.0/nunit.framework.dll",
+        "lib/net6.0/nunit.framework.legacy.dll",
+        "lib/net6.0/nunit.framework.legacy.xml",
+        "lib/net6.0/nunit.framework.xml",
+        "lib/net8.0/nunit.framework.dll",
+        "lib/net8.0/nunit.framework.legacy.dll",
+        "lib/net8.0/nunit.framework.legacy.xml",
+        "lib/net8.0/nunit.framework.xml",
+        "nunit.4.4.0.nupkg.sha512",
+        "nunit.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "NUnit >= 4.4.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/ted/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/ted/RiderProjects/ConsoleApp1/ShapeDrawing/ShapeDrawing.csproj",
+      "projectName": "ShapeDrawing",
+      "projectPath": "/home/ted/RiderProjects/ConsoleApp1/ShapeDrawing/ShapeDrawing.csproj",
+      "packagesPath": "/home/ted/.nuget/packages/",
+      "outputPath": "/home/ted/RiderProjects/ConsoleApp1/ShapeDrawing/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/ted/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "/usr/lib/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "dependencies": {
+          "NUnit": {
+            "target": "Package",
+            "version": "[4.4.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

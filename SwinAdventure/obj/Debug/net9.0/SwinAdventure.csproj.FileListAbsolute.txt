@@ -1,0 +1,14 @@
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/bin/Debug/net9.0/SwinAdventure
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/bin/Debug/net9.0/SwinAdventure.deps.json
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/bin/Debug/net9.0/SwinAdventure.runtimeconfig.json
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/bin/Debug/net9.0/SwinAdventure.dll
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/bin/Debug/net9.0/SwinAdventure.pdb
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/SwinAdventure.GeneratedMSBuildEditorConfig.editorconfig
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/SwinAdventure.AssemblyInfoInputs.cache
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/SwinAdventure.AssemblyInfo.cs
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/SwinAdventure.csproj.CoreCompileInputs.cache
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/SwinAdventure.dll
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/refint/SwinAdventure.dll
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/SwinAdventure.pdb
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/SwinAdventure.genruntimeconfig.cache
+/home/ted/RiderProjects/ConsoleApp1/SwinAdventure/obj/Debug/net9.0/ref/SwinAdventure.dll
