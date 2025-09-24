@@ -1,6 +1,7 @@
-using System.Drawing;
 using SplashKitSDK;
-using Color = SplashKitSDK.Color;
+
+//THIS SHOULD BE REMOVED
+//using Color = System.Drawing.Color;
 
 namespace ShapeDrawer;
 
@@ -14,20 +15,50 @@ public class Shape
 
     public Shape(int param)
     {
-        _color = Color.Chocolate.ToString();
+        _color = Color.Chocolate;
         _x = 0.0f;
         _y = 0.0f;
         _width = param;
         _height = param;
     }
 
+    /*
+     * Expression-bodied property
+     * Shorthand for get and set
+     */
+    
+    public Color Color
+    {
+        get { return _color; }
+        set { _color = value; }
+    }
+    public float X
+    {
+        get => _x;
+        set => _x = value;
+    }
+
+    public float Y
+    {
+        get => _y;
+        set => _y = value;
+    }
+
+    public int Width
+    {
+        get => _width;
+        set => _width = value;
+    }
+
+    public int Height
+    {
+        get => _height;
+        set => _height = value;
+    }
+
     public void Draw()
     {
-        Console.WriteLine("Color is " + _color);
-        Console.WriteLine("X is " + _x);
-        Console.WriteLine("Y is " + _y);
-        Console.WriteLine("Width is " + _width);
-        Console.WriteLine("Height is " + _height);
+        SplashKit.FillRectangle(_color,_x ,_y, _width, _height);
     }
 
     public float ComputeArea()
