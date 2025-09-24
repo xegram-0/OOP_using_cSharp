@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwinAdventure", "SwinAdvent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwinAdventureTests", "SwinAdventureTests\SwinAdventureTests.csproj", "{3F2BF894-9BD8-42FB-9A68-C4D34208F2B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeDrawer", "ShapeDrawer\ShapeDrawer.csproj", "{A23B6A86-31CC-4944-82A0-F4E6AD54E59B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{3F2BF894-9BD8-42FB-9A68-C4D34208F2B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F2BF894-9BD8-42FB-9A68-C4D34208F2B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F2BF894-9BD8-42FB-9A68-C4D34208F2B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23B6A86-31CC-4944-82A0-F4E6AD54E59B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23B6A86-31CC-4944-82A0-F4E6AD54E59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23B6A86-31CC-4944-82A0-F4E6AD54E59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23B6A86-31CC-4944-82A0-F4E6AD54E59B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

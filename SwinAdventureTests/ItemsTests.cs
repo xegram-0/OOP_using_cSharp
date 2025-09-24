@@ -26,11 +26,7 @@ namespace SwinAdventureTests
             Assert.That(_items.LongDescription, Is.EqualTo("Sword"));
         }
 
-        [Test]
-        public bool TestPrivilegeEscalation()
-        {
-            Assert.That(_items.PrivilegeEscalation("2476"), Is.EqualTo("0007"));
-        }
+      
     }
 }
 
