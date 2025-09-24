@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NS6qheq20zc=",
+  "dgSpecHash": "Nen9yArPDto=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\ShapeDrawing\\ShapeDrawing.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\nguye\\.nuget\\packages\\nunit\\4.4.0\\nunit.4.4.0.nupkg.sha512"
-  ],
+  "projectFilePath": "/home/xerox/RiderProjects/OOP_using_cSharp/ShapeDrawing/ShapeDrawing.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

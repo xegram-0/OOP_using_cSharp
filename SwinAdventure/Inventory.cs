@@ -1,4 +1,5 @@
-﻿namespace SwinAdventure;
+﻿/*
+namespace SwinAdventure;
 
 public class Inventory : Items
 {
@@ -43,3 +44,4 @@ public class Inventory : Items
         set => _items = value;
     }
 }
+*/
