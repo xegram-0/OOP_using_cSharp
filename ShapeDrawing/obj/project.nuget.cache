@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NS6qheq20zc=",
+  "dgSpecHash": "/KJMq6ALw/M=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\ShapeDrawing\\ShapeDrawing.csproj",
+  "projectFilePath": "/home/ted/RiderProjects/OOP_using_cSharp/ShapeDrawing/ShapeDrawing.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nguye\\.nuget\\packages\\nunit\\4.4.0\\nunit.4.4.0.nupkg.sha512"
+    "/home/ted/.nuget/packages/nunit/4.4.0/nunit.4.4.0.nupkg.sha512"
   ],
   "logs": []
 }

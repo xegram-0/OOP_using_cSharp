@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "A52eYA1vkfI=",
+  "dgSpecHash": "qDBO0YLGZSc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\CounterTask\\CounterTask.csproj",
+  "projectFilePath": "/home/ted/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nguye\\.nuget\\packages\\nunit\\4.4.0\\nunit.4.4.0.nupkg.sha512"
+    "/home/ted/.nuget/packages/nunit/4.4.0/nunit.4.4.0.nupkg.sha512"
   ],
   "logs": []
 }
