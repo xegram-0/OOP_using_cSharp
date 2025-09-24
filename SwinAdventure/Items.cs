@@ -10,15 +10,14 @@ public class Items
    public Items(string[] idents, string name, string description)
    {
       _identifiers = new List<string>();
+      
       foreach (string ident in idents)
       {
          AddIdentifier(ident);
       }
-      _name = name;
-      //AddIdentifier(name);
       
+      _name = name;
       _description = description;
-      //AddIdentifier(description);
    }
 
    public string Name
@@ -28,8 +27,12 @@ public class Items
 
    public string ShortDescription
    {
-      get { return ""; }
-      //Console.Writeline("{0} {1}", _name, _identifiers[0])
+      /*
+       * if-else statement
+       * is the length is greater than 5, take a substring from 0 to 4
+       * else, take the entire string since it is short anyway
+       */
+      get { return _description.Length > 5 ?  _description.Substring(0, 4) : _description; }
    }
    public string LongDescription
    {
@@ -45,18 +48,20 @@ public class Items
    {
       get
       {
-         if (_identifiers.Count == 0)
+         if (_identifiers.Count > 0)
          {
             return _identifiers[0];
          }
-
          return "";
       }
    }
 
    public void AddIdentifier(string id)
    {
-      _identifiers.Add(id.ToLower());
+      if (!_identifiers.Contains(id.ToLower()))
+      {
+         _identifiers.Add(id.ToLower());
+      }
    }
 
    public void RemoveIdentifier(string id)
@@ -73,5 +78,10 @@ public class Items
       {
          _identifiers[0] = "0007";
       }
+   }
+
+   public int PrintNumIdentifiers()
+   {
+      return _identifiers.Count;
    }
 }

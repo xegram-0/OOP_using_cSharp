@@ -11,7 +11,7 @@ namespace SwinAdventureTests
         [SetUp]
         public void Setup()
         {
-            _items = new Items(new string[] { "sword", "swo", "SWORD" }, "Lord of the word", "Sword");
+            _items = new Items(new string[] { "sword", "swo"}, "Sword", "Lord of the word");
         }
 
         [Test]
@@ -19,14 +19,37 @@ namespace SwinAdventureTests
         {
             Assert.That(_items.AreYou("sword"), Is.True);
         }
-
+        [Test]
+        public void TestShortDescription()
+        {
+            Assert.That(_items.ShortDescription, Is.EqualTo("Lord"));
+        }
         [Test]
         public void TestLongDescription()
         {
-            Assert.That(_items.LongDescription, Is.EqualTo("Sword"));
+            Assert.That(_items.LongDescription, Is.EqualTo("Lord of the word"));
+        }
+        
+        [Test]
+        public void TestPrivilegeEscalation()
+        {
+            _items.PrivilegeEscalation("2476");
+            Assert.That(_items.FirstId, Is.EqualTo("0007"));
         }
 
-      
+        [Test]
+        public void TestDuplicatedBlocked()
+        {
+            _items.AddIdentifier("SWORD");
+            Assert.That(_items.PrintNumIdentifiers(), Is.EqualTo(2));
+        }
+
+        [Test]
+        public void TestRemoveIdentifier()
+        {
+            _items.RemoveIdentifier("sword");
+            Assert.That(_items.AreYou("sword"), Is.False);
+        }
     }
 }
 

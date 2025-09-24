@@ -32,12 +32,14 @@ public class IdentifiableObj
    {
       get
       {
-         if (_identifiers.Count == 0)
+         if (_identifiers.Count > 0)
          {
             return _identifiers[0];
          }
-
-         return "";
+         else
+         {
+            return null;
+         }
       }
    }
    
