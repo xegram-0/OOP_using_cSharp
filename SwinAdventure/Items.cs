@@ -6,7 +6,8 @@ public class Items
    private List<string> _identifiers;
    private string _description;
    private string _name;
-
+   
+   public Items(){} // for parameterless constructor error
    public Items(string[] idents, string name, string description)
    {
       _identifiers = new List<string>();
