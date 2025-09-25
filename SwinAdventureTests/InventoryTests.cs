@@ -58,4 +58,18 @@ public class InventoryTests
         Assert.That(itemList.Contains("Bread"), Is.True);
         //ItemList takes the name not the other things if this is confusing
     }
+
+    [Test]
+    public void TestRemoveItem()
+    {
+        Item bottle = new Item(new[]{"bottle"}, "Bottle", "A full bottle of water");
+        Item bread = new Item(new[]{"bread"}, "Bread", "A delicious bread");
+        
+        _inventory.Put(bottle);
+        _inventory.Put(bread);
+        
+        _inventory.RemoveItem(bottle);
+        Assert.That(_inventory.HasItem("bottle"), Is.False);
+        Assert.That(_inventory.HasItem("bread"), Is.True);
+    }
 }

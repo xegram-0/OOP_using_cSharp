@@ -12,7 +12,8 @@ public class Shape
     private float _y;
     private int _width;
     private int _height;
-
+    private Point2D _circlePos;
+    private float _radius;
     public Shape(int param)
     {
         _color = Color.Chocolate;
@@ -20,6 +21,8 @@ public class Shape
         _y = 0.0f;
         _width = param;
         _height = param;
+        _radius = param;
+        _circlePos = SplashKit.MousePosition();
     }
 
     /*
@@ -55,12 +58,34 @@ public class Shape
         get => _height;
         set => _height = value;
     }
-
+    
     public void Draw()
     {
         SplashKit.FillRectangle(_color,_x ,_y, _width, _height);
     }
 
+    public void DrawCircle()
+    {
+        SplashKit.DrawCircle(_color, _circlePos, _radius );
+       
+    }
+
+    public void UpdateCircle()
+    {
+        if (SplashKit.MouseClicked(MouseButton.LeftButton))
+        {
+           _circlePos = SplashKit.MousePosition();
+        }
+    }
+    public bool IsMouseInsideCircle()
+    {
+        Point2D mousePos = SplashKit.MousePosition();
+        double dx = mousePos.X - _circlePos.X;
+        double dy = mousePos.Y - _circlePos.Y;
+        double distSquared = dx * dx + dy * dy;
+
+        return distSquared <= _radius * _radius;
+    }
     public float ComputeArea()
     {
         float result = ((_width) * (_height));
@@ -79,4 +104,6 @@ public class Shape
             return false;
         }
     }
+
+   
 }

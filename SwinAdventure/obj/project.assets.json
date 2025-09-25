@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/home/xerox/.nuget/packages/": {}
+    "/home/ted/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/xerox/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj",
+      "projectUniqueName": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj",
       "projectName": "SwinAdventure",
-      "projectPath": "/home/xerox/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj",
-      "packagesPath": "/home/xerox/.nuget/packages/",
-      "outputPath": "/home/xerox/RiderProjects/OOP_using_cSharp/SwinAdventure/obj/",
+      "projectPath": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj",
+      "packagesPath": "/home/ted/.nuget/packages/",
+      "outputPath": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/xerox/.nuget/NuGet/NuGet.Config"
+        "/home/ted/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"

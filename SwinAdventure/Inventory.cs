@@ -19,7 +19,7 @@ public class Inventory : Item
 
     public bool HasItem(string id)
     {
-        return _items.Any(item => item.AreYou(id));
+        return _items.Any(item => item.AreYou(id)); //Is there any items that satisfy the condition based on id
     }
 
     public void Put(Item itm)
@@ -29,8 +29,8 @@ public class Inventory : Item
 
     public Item Take(string id)
     {
-        Item item = _items.FirstOrDefault(i => i.AreYou(id));
-        if (item != null)
+        Item item = _items.FirstOrDefault(i => i.AreYou(id)); //Find first instance of i that i is based on id
+        if (item != null)                                           // If item is not empty, remove
         {
             _items.Remove(item);
         }
@@ -44,10 +44,15 @@ public class Inventory : Item
 
     public string ItemList
     {
-        get => string.Join("\n", _items.Select(i => i.Name));
+        get => string.Join("\n", _items.Select(i => i.Name));  //Return string, that string is the name of the object items
+    }
+
+    public void RemoveItem(Item itm)
+    {
+        _items.Remove(itm);
     }
 }
 /*
- * You SET THE FREAKING NAME WITH THE S INSTEAD OF NON-S
+ * You SET THE FREAKING NAME WITH THE S INSTEAD OF NON-S (Items)
  * WHICH LEADS TO THE INCONSISTENT WITH THE UML
 */
