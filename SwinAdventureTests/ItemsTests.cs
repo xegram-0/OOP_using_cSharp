@@ -6,12 +6,12 @@ namespace SwinAdventureTests
     [TestFixture]
     public class ItemsTests
     {
-        private Items _items;
+        private Item _items;
 
         [SetUp]
         public void Setup()
         {
-            _items = new Items(new string[] { "sword", "swo"}, "Sword", "Lord of the word");
+            _items = new Item(new string[] { "sword", "swo"}, "Sword", "Lord of the word");
         }
 
         [Test]

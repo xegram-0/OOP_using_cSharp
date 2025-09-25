@@ -1,14 +1,14 @@
 using System;
 namespace SwinAdventure;
 
-public class Items
+public class Item
 {
    private List<string> _identifiers;
    private string _description;
    private string _name;
    
-   public Items(){} // for parameterless constructor error
-   public Items(string[] idents, string name, string description)
+   public Item(){} // for parameterless constructor error
+   public Item(string[] idents, string name, string description)
    {
       _identifiers = new List<string>();
       
@@ -42,7 +42,7 @@ public class Items
 
    public bool AreYou(string id)
    {
-      return _identifiers.Contains(id);
+      return _identifiers.Contains(id.ToLower());
    }
 
    public string FirstId

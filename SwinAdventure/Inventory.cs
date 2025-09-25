@@ -1,47 +1,53 @@
-﻿/*
+﻿
 namespace SwinAdventure;
 
-public class Inventory : Items
+public class Inventory : Item
 {
-    private List<Items> _items;
+    private List<Item> _items;
 
-    public Inventory()
+    public Inventory(string[] idents, string name, string description) 
+        : base(idents, name, description)
     {
-        _items = new List<Items>();
-        foreach (Items item in _items)
+        _items = new List<Item>();
+        /*
+        foreach (Item item in _items)
         {
             _items.Add(item);
         }
+        */
     }
 
     public bool HasItem(string id)
     {
-        bool result = AreYou(id);
-        return result;
+        return _items.Any(item => item.AreYou(id));
     }
 
-    public void Put(Items itm)
+    public void Put(Item itm)
     {
         _items.Add(itm);
     }
 
     public Item Take(string id)
     {
-        _items.Remove(id);
+        Item item = _items.FirstOrDefault(i => i.AreYou(id));
+        if (item != null)
+        {
+            _items.Remove(item);
+        }
+        return item;
     }
 
     public Item Fetch(string id)
     {
-        if (AreYou(id))
-        {
-            return _items[id];
-        }
+        return _items.FirstOrDefault(i => i.AreYou(id));
     }
 
     public string ItemList
     {
-        get => _items;
-        set => _items = value;
+        get => string.Join("\n", _items.Select(i => i.Name));
     }
 }
+/*
+ * You SET THE FREAKING NAME WITH THE S INSTEAD OF NON-S
+ * WHICH LEADS TO THE INCONSISTENT WITH THE UML
 */
