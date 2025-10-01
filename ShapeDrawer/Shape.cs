@@ -14,6 +14,7 @@ public class Shape
     private int _height;
     private Point2D _circlePos;
     private float _radius;
+    private bool _selected;
     public Shape(int param)
     {
         _color = Color.Chocolate;
@@ -29,7 +30,7 @@ public class Shape
      * Expression-bodied property
      * Shorthand for get and set
      */
-    
+    public bool Selected; //False by default
     public Color Color
     {
         get { return _color; }
@@ -62,6 +63,10 @@ public class Shape
     public void Draw()
     {
         SplashKit.FillRectangle(_color,_x ,_y, _width, _height);
+        if (_selected)
+        {
+            DrawOutline();
+        }
     }
 
     public void DrawCircle()
@@ -105,5 +110,9 @@ public class Shape
         }
     }
 
+    public void DrawOutline()
+    {
+        SplashKit.DrawRectangle(Color.Black, X, Y, 5+67, 5+67);
+    }
    
 }
