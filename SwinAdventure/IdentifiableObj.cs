@@ -27,7 +27,6 @@ public class IdentifiableObj
       }
    }
    
-   //NEED HELP
    public string FirsId
    {
       get

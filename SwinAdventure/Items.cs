@@ -1,22 +1,29 @@
 using System;
 namespace SwinAdventure;
 
-public class Item
+public class Item : GameObj
 {
-   private List<string> _identifiers;
-   private string _description;
-   private string _name;
+   public Item(string[] idents, string name, string description) :base(idents, name, description){ }
+   public override string FullDescription => Description;
+}
+
+//private List<string> _identifiers;
+//private string _description;
+//private string _name;
    
-   public Item(){} // for parameterless constructor error
-   public Item(string[] idents, string name, string description)
+//public Item(){} // for parameterless constructor error
+
+
+
+/*
    {
       _identifiers = new List<string>();
-      
+
       foreach (string ident in idents)
       {
          AddIdentifier(ident);
       }
-      
+
       _name = name;
       _description = description;
    }
@@ -33,6 +40,7 @@ public class Item
        * is the length is greater than 5, take a substring from 0 to 4
        * else, take the entire string since it is short anyway
        */
+/*
       get { return _description.Length > 5 ?  _description.Substring(0, 4) : _description; }
    }
    public string LongDescription
@@ -85,4 +93,4 @@ public class Item
    {
       return _identifiers.Count;
    }
-}
+   */

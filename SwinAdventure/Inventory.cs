@@ -1,20 +1,13 @@
 ﻿
 namespace SwinAdventure;
 
-public class Inventory : Item
+public class Inventory 
 {
     private List<Item> _items;
 
-    public Inventory(string[] idents, string name, string description) 
-        : base(idents, name, description)
+    public Inventory(string[] idents, string name, string description)
     {
         _items = new List<Item>();
-        /*
-        foreach (Item item in _items)
-        {
-            _items.Add(item);
-        }
-        */
     }
 
     public bool HasItem(string id)

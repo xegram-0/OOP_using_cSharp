@@ -1,27 +1,16 @@
 namespace SwinAdventure;
 
-public class GameObj
+public class GameObj : IdentifiableObj
 {
     private string _name;
     private string _description;
-
-    public GameObj(string[] ids, string name, string description)
+    public GameObj(string[] ids, string name, string description) : base(ids)
     {
         _name = name;
         _description = description;
     }
-
-    public string Name
-    {
-        get { return _name; }
-    }
-    public string ShortDescription
-    {
-        get { return _description.Length > 5 ?  _description.Substring(0, 4) : _description; }
-    }
-
-    public virtual string FullDescription
-    {
-        get { return _description; }
-    }
+    public string Name => _name;
+    public string Description => _description;
+    public string ShortDescription => $"{_name} {FirsId}";
+    public virtual string FullDescription => _description;
 }
