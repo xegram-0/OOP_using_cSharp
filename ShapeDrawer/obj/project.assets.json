@@ -38,19 +38,19 @@
     ]
   },
   "packageFolders": {
-    "/home/ted/.nuget/packages/": {}
+    "/home/xerox/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ted/RiderProjects/OOP_using_cSharp/ShapeDrawer/ShapeDrawer.csproj",
+      "projectUniqueName": "/home/xerox/RiderProjects/OOP_using_cSharp/ShapeDrawer/ShapeDrawer.csproj",
       "projectName": "ShapeDrawer",
-      "projectPath": "/home/ted/RiderProjects/OOP_using_cSharp/ShapeDrawer/ShapeDrawer.csproj",
-      "packagesPath": "/home/ted/.nuget/packages/",
-      "outputPath": "/home/ted/RiderProjects/OOP_using_cSharp/ShapeDrawer/obj/",
+      "projectPath": "/home/xerox/RiderProjects/OOP_using_cSharp/ShapeDrawer/ShapeDrawer.csproj",
+      "packagesPath": "/home/xerox/.nuget/packages/",
+      "outputPath": "/home/xerox/RiderProjects/OOP_using_cSharp/ShapeDrawer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/ted/.nuget/NuGet/NuGet.Config"
+        "/home/xerox/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"

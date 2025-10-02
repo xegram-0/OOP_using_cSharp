@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/ted/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj": {}
+    "/home/xerox/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj": {}
   },
   "projects": {
-    "/home/ted/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj": {
+    "/home/xerox/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ted/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj",
+        "projectUniqueName": "/home/xerox/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj",
         "projectName": "CounterTask",
-        "projectPath": "/home/ted/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj",
-        "packagesPath": "/home/ted/.nuget/packages/",
-        "outputPath": "/home/ted/RiderProjects/OOP_using_cSharp/CounterTask/obj/",
+        "projectPath": "/home/xerox/RiderProjects/OOP_using_cSharp/CounterTask/CounterTask.csproj",
+        "packagesPath": "/home/xerox/.nuget/packages/",
+        "outputPath": "/home/xerox/RiderProjects/OOP_using_cSharp/CounterTask/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/ted/.nuget/NuGet/NuGet.Config"
+          "/home/xerox/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
