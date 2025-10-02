@@ -7,34 +7,40 @@ public class Drawing
     private readonly List<Shape> _shapes;
     private Color _background;
     
-    public Color Background
-    {
-        get => _background;
-        set => _background = value;
-    }
-
+   
     public Drawing(Color background)
     {
         _shapes = new List<Shape>();
-        _background = Background;
+        _background = background; //Not Background
     }
     public Drawing () : this (Color.White)
     {
         
     }
     
+    public Color Background
+    {
+        get => _background;
+        set => _background = value;
+    }
+  
+    public List<Shape> SelectedShapes
+    {
+        get
+        {
+            List<Shape> result = new List<Shape>();
+            foreach (Shape shape in _shapes)
+            {
+                if (shape.Selected)
+                {
+                    result.Add(shape);
+                }
+            }
+
+            return result;
+        }
+    }
     public int ShapeCount => _shapes.Count;
-    
-    public void AddShape(Shape shape)
-    {
-        _shapes.Add(shape);
-    }
-
-    public void RemoveShape(Shape shape)
-    {
-        _=_shapes.Remove(shape);
-    }
-
     public void Draw()
     {
         SplashKit.ClearScreen(_background);
@@ -48,23 +54,22 @@ public class Drawing
     {
         foreach (Shape shape in _shapes)
         {
-            shape.Selected = shape.IsAt((int)position.X, (int)position.Y);
-        }
-    }
-    public List<Shape> SelectedShapes
-    {
-        get
-        {
-            var result = new List<Shape>();
-            foreach (Shape shape in _shapes)
+            //shape.Selected = shape.IsAt(position.X, position.Y); //Since position is in double type, single selection
+            
+            if (shape.IsAt(position.X, position.Y))
             {
-                if (shape.Selected)
-                {
-                    result.Add(shape);
-                }
+                shape.Selected = true;
             }
-
-            return result;
         }
     }
+    public void AddShape(Shape shape)
+    {
+        _shapes.Add(shape);
+    }
+
+    public void RemoveShape(Shape shape)
+    {
+        _shapes.Remove(shape);
+    }
+    
 }

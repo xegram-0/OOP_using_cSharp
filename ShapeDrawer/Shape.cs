@@ -30,7 +30,11 @@ public class Shape
      * Expression-bodied property
      * Shorthand for get and set
      */
-    public bool Selected; //False by default
+    public bool Selected //False by default
+    {
+        get => _selected;
+        set => _selected = value;
+    } 
     public Color Color
     {
         get { return _color; }
@@ -59,7 +63,6 @@ public class Shape
         get => _height;
         set => _height = value;
     }
-    
     public void Draw()
     {
         SplashKit.FillRectangle(_color,_x ,_y, _width, _height);
@@ -68,13 +71,6 @@ public class Shape
             DrawOutline();
         }
     }
-
-    public void DrawCircle()
-    {
-        SplashKit.DrawCircle(_color, _circlePos, _radius );
-       
-    }
-
     public void UpdateCircle()
     {
         if (SplashKit.MouseClicked(MouseButton.LeftButton))
@@ -96,23 +92,34 @@ public class Shape
         float result = ((_width) * (_height));
         return result;
     }
-    public bool IsAt(int xInput, int yInput)
+    public bool IsAt(double xInput, double yInput) //Position requires double
     {
         if (xInput >= _x && xInput <= _x + _width && yInput >= _y && yInput <= _y + _height)
-        {
-            Console.WriteLine("True");
+        { 
             return true;
         }
         else
         {
-            Console.WriteLine("False");
             return false;
         }
     }
 
     public void DrawOutline()
     {
-        SplashKit.DrawRectangle(Color.Black, X, Y, 5+67, 5+67);
+        double margin = 10;
+        double outlineX = X - margin;
+        double outlineY = Y - margin;
+        double outlineWidth = Width + 2 * margin;
+        double outlineHeight =Height + 2*margin;
+        
+        SplashKit.DrawRectangle(Color.Black, outlineX, outlineY, outlineWidth, outlineHeight);
     }
    
 }
+/*
+public void DrawCircle()
+{
+    SplashKit.DrawCircle(_color, _circlePos, _radius );
+       
+}
+*/

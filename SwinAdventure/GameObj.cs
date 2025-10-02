@@ -1,6 +1,6 @@
 namespace SwinAdventure;
 
-public class GameObj : IdentifiableObj
+public abstract class GameObj : IdentifiableObj
 {
     private string _name;
     private string _description;
@@ -11,6 +11,6 @@ public class GameObj : IdentifiableObj
     }
     public string Name => _name;
     public string Description => _description;
-    public string ShortDescription => $"{_name} {FirsId}";
+    public string ShortDescription => $"{_name} {FirstId}";
     public virtual string FullDescription => _description;
 }

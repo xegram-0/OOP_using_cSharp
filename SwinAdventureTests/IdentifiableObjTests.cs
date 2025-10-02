@@ -36,13 +36,13 @@ namespace SwinAdventureTests
         [Test]
         public void TestFirstId()
         {
-            Assert.That(_identifierObj.FirsId,Is.EqualTo("1026"));
+            Assert.That(_identifierObj.FirstId,Is.EqualTo("1026"));
         }
 
         [Test]
         public void TestSecondId()
         {
-            Assert.That(_notIdentifiableObj.FirsId,Is.EqualTo(""));
+            Assert.That(_notIdentifiableObj.FirstId,Is.EqualTo(""));
         }
 
         [Test]
@@ -56,7 +56,7 @@ namespace SwinAdventureTests
         public void TestPrivilegeEscalation()
         {
             _identifierObj.PrivilegeEscalation("2476");
-            Assert.That(_identifierObj.FirsId, Is.EqualTo("0007"));
+            Assert.That(_identifierObj.FirstId, Is.EqualTo("0007"));
         }
     }
 }

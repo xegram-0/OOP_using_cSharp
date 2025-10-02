@@ -4,10 +4,11 @@ namespace SwinAdventure;
 public class Inventory 
 {
     private List<Item> _items;
-
+    private string[] _idents;
     public Inventory(string[] idents, string name, string description)
     {
         _items = new List<Item>();
+        _idents = idents;
     }
 
     public bool HasItem(string id)
@@ -43,6 +44,17 @@ public class Inventory
     public void RemoveItem(Item itm)
     {
         _items.Remove(itm);
+    }
+
+   public bool Put_ItemWithLimit(Item itm)
+    {
+        if (itm.IdentCount <= 3)
+        {
+            _items.Add(itm);
+            return true;
+        }
+
+        return false;
     }
 }
 /*

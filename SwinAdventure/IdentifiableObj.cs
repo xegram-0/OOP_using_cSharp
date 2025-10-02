@@ -2,7 +2,7 @@ using System;
 
 namespace SwinAdventure;
 
-public class IdentifiableObj
+public class IdentifiableObj 
 {
    private List<string> _identifiers;
 
@@ -27,7 +27,7 @@ public class IdentifiableObj
       }
    }
    
-   public string FirsId
+   public string FirstId //TYPE FOR FIRSID
    {
       get
       {
@@ -59,5 +59,13 @@ public class IdentifiableObj
    public void RemoveIdentifier(string id)
    {
       _identifiers.Remove(id.ToLower());
+   }
+
+   public int IdentCount
+   {
+      get
+      {
+         return _identifiers.Count;
+      }
    }
 }

@@ -72,4 +72,14 @@ public class InventoryTests
         Assert.That(_inventory.HasItem("bottle"), Is.False);
         Assert.That(_inventory.HasItem("bread"), Is.True);
     }
+
+    [Test]
+    public void TestPut_ItemWithLimit()
+    {
+        Item potion = new Item(new[]{"fire potion","toxic potion",}, "Potion", "A potion");
+        Assert.That(_inventory.Put_ItemWithLimit(potion), Is.True);
+        
+        Item donkey = new Item(new []{"pink donkey","white donkey","fire donkey", "baby donkey"}, "Donkey", "A potion");
+        Assert.That(_inventory.Put_ItemWithLimit(donkey), Is.False);
+    }
 }

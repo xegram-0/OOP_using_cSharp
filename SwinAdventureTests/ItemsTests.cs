@@ -22,7 +22,7 @@ namespace SwinAdventureTests
         [Test]
         public void TestShortDescription()
         {
-            Assert.That(_items.ShortDescription, Is.EqualTo("Lord"));
+            Assert.That(_items.ShortDescription, Is.EqualTo("Sword sword"));
         }
         [Test]
         public void TestLongDescription()
