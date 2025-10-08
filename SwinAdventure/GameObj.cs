@@ -12,5 +12,5 @@ public abstract class GameObj : IdentifiableObj
     public string Name => _name;
     public string Description => _description;
     public string ShortDescription => $"{_name} {FirstId}";
-    public virtual string FullDescription => _description;
+    public virtual string FullDescription => Description; //Not description
 }
