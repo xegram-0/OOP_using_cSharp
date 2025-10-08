@@ -15,6 +15,7 @@ public class Shape
     private Point2D _circlePos;
     private float _radius;
     private bool _selected;
+
     public Shape(int param)
     {
         _color = Color.Chocolate;
@@ -25,6 +26,10 @@ public class Shape
         _radius = param;
         _circlePos = SplashKit.MousePosition();
     }
+
+    public Shape(){
+
+}
 
     /*
      * Expression-bodied property

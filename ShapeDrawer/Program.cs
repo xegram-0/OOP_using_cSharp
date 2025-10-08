@@ -6,6 +6,7 @@ namespace ShapeDrawer
     {
         public static void Main()
         {
+            //test
             //Shape theCircle = new Shape(50); //Verification: Circle with 50 pixel
             Drawing myDrawing = new Drawing();
             Window window = new Window("Shape Drawer", 600, 600);
