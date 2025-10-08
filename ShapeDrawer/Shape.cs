@@ -1,40 +1,19 @@
 using SplashKitSDK;
-
-//THIS SHOULD BE REMOVED
-//using Color = System.Drawing.Color;
-
 namespace ShapeDrawer;
 
-public class Shape
+public abstract class Shape
 {
     private Color _color;
-    private float _x;
-    private float _y;
-    private int _width;
-    private int _height;
-    private Point2D _circlePos;
-    private float _radius;
+    private float _x, _y;
     private bool _selected;
-
-    public Shape(int param)
+    protected Shape(Color color)
     {
-        _color = Color.Chocolate;
+        _color = color;
         _x = 0.0f;
         _y = 0.0f;
-        _width = param;
-        _height = param;
-        _radius = param;
-        _circlePos = SplashKit.MousePosition();
     }
 
-    public Shape(){
-
-}
-
-    /*
-     * Expression-bodied property
-     * Shorthand for get and set
-     */
+    protected Shape():this(Color.Yellow) {}
     public bool Selected //False by default
     {
         get => _selected;
@@ -42,89 +21,23 @@ public class Shape
     } 
     public Color Color
     {
-        get { return _color; }
-        set { _color = value; }
+        get => _color; 
+        set => _color = value; 
     }
     public float X
     {
         get => _x;
         set => _x = value;
     }
-
     public float Y
     {
         get => _y;
         set => _y = value;
     }
-
-    public int Width
+    public virtual void Draw(){}
+    public virtual bool IsAt(Point2D point)
     {
-        get => _width;
-        set => _width = value;
+        return false;
     }
-
-    public int Height
-    {
-        get => _height;
-        set => _height = value;
-    }
-    public void Draw()
-    {
-        SplashKit.FillRectangle(_color,_x ,_y, _width, _height);
-        if (_selected)
-        {
-            DrawOutline();
-        }
-    }
-    public void UpdateCircle()
-    {
-        if (SplashKit.MouseClicked(MouseButton.LeftButton))
-        {
-           _circlePos = SplashKit.MousePosition();
-        }
-    }
-    public bool IsMouseInsideCircle()
-    {
-        Point2D mousePos = SplashKit.MousePosition();
-        double dx = mousePos.X - _circlePos.X;
-        double dy = mousePos.Y - _circlePos.Y;
-        double distSquared = dx * dx + dy * dy;
-
-        return distSquared <= _radius * _radius;
-    }
-    public float ComputeArea()
-    {
-        float result = ((_width) * (_height));
-        return result;
-    }
-    public bool IsAt(double xInput, double yInput) //Position requires double
-    {
-        if (xInput >= _x && xInput <= _x + _width && yInput >= _y && yInput <= _y + _height)
-        { 
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public void DrawOutline()
-    {
-        double margin = 10;
-        double outlineX = X - margin;
-        double outlineY = Y - margin;
-        double outlineWidth = Width + 2 * margin;
-        double outlineHeight =Height + 2*margin;
-        
-        SplashKit.DrawRectangle(Color.Black, outlineX, outlineY, outlineWidth, outlineHeight);
-    }
-   
+    public virtual void DrawOutline(){}
 }
-/*
-public void DrawCircle()
-{
-    SplashKit.DrawCircle(_color, _circlePos, _radius );
-       
-}
-*/

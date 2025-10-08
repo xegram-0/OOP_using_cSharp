@@ -6,18 +6,12 @@ public class Drawing
 {
     private readonly List<Shape> _shapes;
     private Color _background;
-    
-   
     public Drawing(Color background)
     {
         _shapes = new List<Shape>();
         _background = background; //Not Background
     }
-    public Drawing () : this (Color.White)
-    {
-        
-    }
-    
+    public Drawing () : this (Color.White){}
     public Color Background
     {
         get => _background;
@@ -36,7 +30,6 @@ public class Drawing
                     result.Add(shape);
                 }
             }
-
             return result;
         }
     }
@@ -49,14 +42,11 @@ public class Drawing
             shape.Draw();
         }
     }
-
     public void SelectShapesAt(Point2D position)
     {
         foreach (Shape shape in _shapes)
         {
-            //shape.Selected = shape.IsAt(position.X, position.Y); //Since position is in double type, single selection
-            
-            if (shape.IsAt(position.X, position.Y))
+            if (shape.IsAt(SplashKit.MousePosition()))
             {
                 shape.Selected = true;
             }
@@ -71,5 +61,4 @@ public class Drawing
     {
         _shapes.Remove(shape);
     }
-    
 }
