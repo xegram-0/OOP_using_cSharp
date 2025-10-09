@@ -1,7 +1,5 @@
 using SplashKitSDK;
-
 namespace ShapeDrawer;
-
 public class Drawing
 {
     private readonly List<Shape> _shapes;
@@ -17,7 +15,6 @@ public class Drawing
         get => _background;
         set => _background = value;
     }
-  
     public List<Shape> SelectedShapes
     {
         get
@@ -56,7 +53,6 @@ public class Drawing
     {
         _shapes.Add(shape);
     }
-
     public void RemoveShape(Shape shape)
     {
         _shapes.Remove(shape);

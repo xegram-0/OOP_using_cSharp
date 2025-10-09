@@ -22,7 +22,11 @@ public class MyLine : Shape
     }
     public override void Draw()
     {
-        SplashKit.DrawLine(Color, X ,Y, _xLine, _yLine);
+        //SplashKit.DrawLine(Color, X ,Y, _xLine, _yLine);
+        for (int i = 0; i < 5; i++)
+        {
+            SplashKit.DrawLine(Color, _xLine +i*100 , _yLine, X+i*100, Y);
+        }
         if (Selected)
         {
             DrawOutline();

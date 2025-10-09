@@ -26,13 +26,11 @@ public class MyCircle : Shape
     {
         SplashKit.DrawCircle(Color.Black, X, Y, _radius+2);
     }
-
     public override bool IsAt(Point2D point)
     {
         double dx = point.X - X;
         double dy = point.Y - Y;
         float distance = (float)Math.Sqrt(dx * dx + dy * dy);
-
         return distance <= _radius;
     }
 }
