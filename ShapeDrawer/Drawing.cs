@@ -9,7 +9,7 @@ public class Drawing
         _shapes = new List<Shape>();
         _background = background; //Not Background
     }
-    public Drawing () : this (Color.White){}
+    public Drawing () : this (Color.White){} //Default value
     public Color Background
     {
         get => _background;
