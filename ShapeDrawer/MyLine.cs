@@ -6,8 +6,8 @@ public class MyLine : Shape
     private MyLine(Color color) : base(color)
     {
         //Position of the first point of the line
-        _xLine = X + 50;
-        _yLine = Y + 50;
+        _xLine = SplashKit.MouseX();
+        _yLine = SplashKit.MouseY();
     }
     public MyLine():this(Color.Red) {}
     public float XLine
@@ -23,9 +23,9 @@ public class MyLine : Shape
     public override void Draw()
     {
         //SplashKit.DrawLine(Color, X ,Y, _xLine, _yLine);
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
-            SplashKit.DrawLine(Color, _xLine +i*100 , _yLine, X+i*100, Y);
+            SplashKit.DrawLine(Color, _xLine  , _yLine+i*20, X +100, Y+i*20);
         }
         if (Selected)
         {
@@ -34,14 +34,23 @@ public class MyLine : Shape
     }
     public override void DrawOutline()
     {
-        SplashKit.DrawCircle(Color.Black, X, Y, 6);
+        SplashKit.DrawCircle(Color.Black, X+100, Y, 6);
         SplashKit.DrawCircle(Color.Black, _xLine, _yLine, 6);
     }
     public override bool IsAt(Point2D point)
     {
+        for (int i = 0; i < 10; i++)
+        {
+            Line line = SplashKit.LineFrom(_xLine,_yLine + i * 20,_xLine + 100,_yLine + i * 20);
+            if (SplashKit.PointOnLine(point, line, 5))
+            {
+                return true;
+            }
+        }
+        return false;
         //PointOnLine requires line only so create a line to check
-        Line line = SplashKit.LineFrom(X, Y, _xLine, _yLine);
-        return SplashKit.PointOnLine(point, line, 10);
+        //Line line = SplashKit.LineFrom(X, Y, _xLine, _yLine);
+        //return SplashKit.PointOnLine(point, line, 10);
     }
     
 }

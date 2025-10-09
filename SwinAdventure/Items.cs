@@ -1,5 +1,5 @@
 using System;
-namespace SwinAdventure; //
+namespace SwinAdventure; 
 
 public class Item : GameObj
 {
