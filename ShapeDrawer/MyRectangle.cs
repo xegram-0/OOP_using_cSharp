@@ -41,4 +41,12 @@ public class MyRectangle : Shape
     {
         return SplashKit.PointInRectangle(point.X, point.Y, X, Y, _width, _height);
     }
+
+    public override void SaveTo(StreamWriter writer)
+    {
+        writer.WriteLine("Rectangle");
+        base.SaveTo(writer);
+        writer.WriteLine(Width);
+        writer.WriteLine(Height);
+    }
 }

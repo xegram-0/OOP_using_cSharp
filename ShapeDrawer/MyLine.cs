@@ -52,5 +52,12 @@ public class MyLine : Shape
         //Line line = SplashKit.LineFrom(X, Y, _xLine, _yLine);
         //return SplashKit.PointOnLine(point, line, 10);
     }
-    
+
+    public override void SaveTo(StreamWriter writer)
+    {
+        writer.WriteLine("Line");
+        base.SaveTo(writer);
+        writer.WriteLine(XLine);
+        writer.WriteLine(YLine);
+    }
 }

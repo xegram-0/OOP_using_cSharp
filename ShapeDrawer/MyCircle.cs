@@ -33,4 +33,11 @@ public class MyCircle : Shape
         float distance = (float)Math.Sqrt(dx * dx + dy * dy);
         return distance <= _radius;
     }
+
+    public override void SaveTo(StreamWriter writer)
+    {
+        writer.WriteLine("Circle");
+        base.SaveTo(writer);
+        writer.WriteLine(Radius);
+    }
 }

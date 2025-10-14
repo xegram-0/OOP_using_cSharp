@@ -76,6 +76,11 @@ namespace ShapeDrawer
                         myDrawing.RemoveShape(lastSelected);
                     }
                 }
+
+                if (SplashKit.KeyTyped(KeyCode.SKey))
+                {
+                    myDrawing.Save("TestDrawing.txt");
+                }
                 SplashKit.RefreshScreen();
             } while (!window.CloseRequested);
         }

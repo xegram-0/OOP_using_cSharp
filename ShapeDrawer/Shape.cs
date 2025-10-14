@@ -35,4 +35,11 @@ public abstract class Shape
     public abstract void Draw();
     public abstract bool IsAt(Point2D point);
     public abstract void DrawOutline();
+
+    public virtual void SaveTo(StreamWriter writer)
+    {
+        writer.WriteColor(Color);
+        writer.WriteLine(X);
+        writer.WriteLine(Y);
+    }
 }

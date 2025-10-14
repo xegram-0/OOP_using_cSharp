@@ -1,3 +1,4 @@
+using System.IO;
 using SplashKitSDK;
 namespace ShapeDrawer;
 public class Drawing
@@ -56,5 +57,20 @@ public class Drawing
     public void RemoveShape(Shape shape)
     {
         _shapes.Remove(shape);
+    }
+
+    public void Save(string filename)
+    {
+        StreamWriter writer = new StreamWriter(filename);
+        try
+        {
+            writer.WriteColor(Background);
+            writer.WriteLine(ShapeCount);
+            foreach (Shape shape in _shapes)
+            {
+                shape.SaveTo(writer);
+            }
+        }
+        finally{ writer.Close();}
     }
 }
