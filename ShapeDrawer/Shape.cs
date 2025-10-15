@@ -42,4 +42,11 @@ public abstract class Shape
         writer.WriteLine(X);
         writer.WriteLine(Y);
     }
+
+    public virtual void LoadFrom(StreamReader reader)
+    {
+        Color = reader.ReadColor();
+        X = reader.ReadInteger();
+        Y = reader.ReadInteger();
+    }
 }

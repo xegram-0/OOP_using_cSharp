@@ -1,4 +1,5 @@
 using System.IO;
+using System.Net.Http.Headers;
 using SplashKitSDK;
 namespace ShapeDrawer;
 public class Drawing
@@ -72,5 +73,39 @@ public class Drawing
             }
         }
         finally{ writer.Close();}
+    }
+
+    public void Load(string filename)
+    {
+        StreamReader reader = new StreamReader(filename);
+        try
+        {
+            Background = reader.ReadColor();
+            int count = reader.ReadInteger();
+            _shapes.Clear();
+            for (int i = 0; i < count; i++)
+            {
+                Shape shape;
+                string kind = reader.ReadLine()!;
+                switch (kind)
+                {
+                    case "Circle":
+                        shape = new MyCircle();
+                        break;
+                    case "Rectangle":
+                        shape = new MyRectangle();
+                        break;
+                    case "Line":
+                        shape = new MyLine();
+                        break;
+                    default:
+                        throw new InvalidDataException("Unknown shape kind: " + kind);
+                        continue;
+                }
+                shape.LoadFrom(reader);
+                AddShape(shape);
+            }
+        }
+        finally{ reader.Close();}
     }
 }

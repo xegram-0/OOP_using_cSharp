@@ -40,4 +40,9 @@ public class MyCircle : Shape
         base.SaveTo(writer);
         writer.WriteLine(Radius);
     }
+    public override void LoadFrom(StreamReader reader)
+    {
+        base.LoadFrom(reader);
+        Radius = reader.ReadInteger();
+    }
 }

@@ -1,7 +1,7 @@
 ﻿using SplashKitSDK;
 
-namespace ShapeDrawer
-{
+namespace ShapeDrawer;
+
     
     public class Program
     {
@@ -79,10 +79,16 @@ namespace ShapeDrawer
 
                 if (SplashKit.KeyTyped(KeyCode.SKey))
                 {
-                    myDrawing.Save("TestDrawing.txt");
+                    myDrawing.Save("TestDrawing2.txt");
+                }
+                SplashKit.RefreshScreen();
+                if (SplashKit.KeyTyped(KeyCode.OKey))
+                {
+                    try{myDrawing.Load("TestDrawing2.txt");}
+                    catch(Exception e) {Console.Error.WriteLine("Loading file error {0}", e.Message);}
                 }
                 SplashKit.RefreshScreen();
             } while (!window.CloseRequested);
         }
     }
-}
+

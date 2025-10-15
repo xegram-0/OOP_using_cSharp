@@ -60,4 +60,10 @@ public class MyLine : Shape
         writer.WriteLine(XLine);
         writer.WriteLine(YLine);
     }
+    public override void LoadFrom(StreamReader reader)
+    {
+        base.LoadFrom(reader);
+        XLine = reader.ReadInteger();
+        YLine = reader.ReadInteger();
+    }
 }

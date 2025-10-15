@@ -20,6 +20,6 @@ public static class ExtensionMethods
 
     public static void WriteColor(this StreamWriter writer, Color clr)
     {
-        writer.WriteLine("{0}\n{1}'\n{2}", clr.R, clr.G, clr.B);
+        writer.WriteLine("{0}\n{1}\n{2}", clr.R, clr.G, clr.B);
     }
 }
