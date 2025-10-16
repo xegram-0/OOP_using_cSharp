@@ -16,7 +16,9 @@ public class MyCircle : Shape
     }
     public override void Draw()
     {
-        SplashKit.FillCircle(Color, X, Y, _radius);
+        Circle circle = SplashKit.CircleAt(X, Y, Radius);
+        SplashKit.FillCircle(Color, circle);
+        //SplashKit.FillCircle(Color, X, Y, _radius);
         if (Selected)
         {
             DrawOutline();
@@ -24,7 +26,9 @@ public class MyCircle : Shape
     }
     public override void DrawOutline()
     {
-        SplashKit.DrawCircle(Color.Black, X, Y, _radius+2);
+        Circle circle = SplashKit.CircleAt(X, Y, Radius+2);
+        //SplashKit.DrawCircle(Color.Black, X, Y, _radius+2);
+        SplashKit.DrawCircle(Color.Black, circle);
     }
     public override bool IsAt(Point2D point)
     {

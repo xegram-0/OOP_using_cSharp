@@ -61,18 +61,21 @@ public class Drawing
     }
 
     public void Save(string filename)
-    {
+    {   
+        //try use using, it is better
         StreamWriter writer = new StreamWriter(filename);
         try
         {
-            writer.WriteColor(Background);
-            writer.WriteLine(ShapeCount);
+            //save the background color with how many shapes are drawn
+            //Save() would call SaveTo() of the Shape class to write to the text file using 'writer' as anchor
+            writer.WriteColor(Background); // first 3 lines
+            writer.WriteLine(ShapeCount); // 4th line 
             foreach (Shape shape in _shapes)
             {
                 shape.SaveTo(writer);
             }
         }
-        finally{ writer.Close();}
+        finally{ writer.Close();} //closing file like that in python
     }
 
     public void Load(string filename)
@@ -82,12 +85,15 @@ public class Drawing
         {
             Background = reader.ReadColor();
             int count = reader.ReadInteger();
-            _shapes.Clear();
+            _shapes.Clear(); //clear previously saved shapes in _shapes
             for (int i = 0; i < count; i++)
             {
                 Shape shape;
-                string kind = reader.ReadLine()!;
+                string kind = reader.ReadLine();
                 switch (kind)
+                //read the file, see the shape name, create the shape obj
+                //using Shape class LoadFrom() to load the shape based on the X,Y and its shape other attributes
+                //save the shape to the _shape List of Shape obj
                 {
                     case "Circle":
                         shape = new MyCircle();
@@ -99,7 +105,7 @@ public class Drawing
                         shape = new MyLine();
                         break;
                     default:
-                        throw new InvalidDataException("Unknown shape kind: " + kind);
+                        throw new InvalidDataException($"Shape kind {kind} not supported");
                         continue;
                 }
                 shape.LoadFrom(reader);
