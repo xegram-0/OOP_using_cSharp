@@ -38,7 +38,19 @@ public class Inventory
 
     public string ItemList
     {
-        get => string.Join("\n", _items.Select(i => i.Name));  //Return string, that string is the name of the object items
+        //get => string.Join("\n", _items.Select(i => i.Name));  //Return string, that string is the name of the object items
+        get
+        {
+            string list = String.Empty;
+            List<string> ItemDescriptionList = new List<string>();
+            foreach (Item itm in _items)
+            {
+                ItemDescriptionList.Add(itm.ShortDescription);
+            }
+
+            list = string.Join(",", ItemDescriptionList);
+            return list;
+        }
     }
 
     public void RemoveItem(Item itm)

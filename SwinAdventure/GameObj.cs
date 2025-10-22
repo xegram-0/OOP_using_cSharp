@@ -13,4 +13,16 @@ public abstract class GameObj : IdentifiableObj
     public string Description => _description;
     public string ShortDescription => $"{_name} {FirstId}";
     public virtual string FullDescription => Description; //Not description
+
+    public virtual void SaveTo(StreamWriter writer)
+    {
+        writer.WriteLine(_name);
+        writer.WriteLine(_description);
+    }
+
+    public virtual void LoadFrom(StreamReader reader)
+    {
+        _name = reader.ReadLine();
+        _description = reader.ReadLine();
+    }
 }
