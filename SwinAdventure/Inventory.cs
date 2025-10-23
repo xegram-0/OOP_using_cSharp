@@ -1,6 +1,4 @@
-﻿
-namespace SwinAdventure;
-
+﻿namespace SwinAdventure;
 public class Inventory 
 {
     private List<Item> _items;
@@ -13,7 +11,7 @@ public class Inventory
 
     public bool HasItem(string id)
     {
-        return _items.Any(item => item.AreYou(id)); //Is there any items that satisfy the condition based on id
+        return _items.Any(item => item.AreYou(id)); //Are there any items that satisfy the condition based on id
     }
 
     public void Put(Item itm)
@@ -41,14 +39,14 @@ public class Inventory
         //get => string.Join("\n", _items.Select(i => i.Name));  //Return string, that string is the name of the object items
         get
         {
-            string list = String.Empty;
+            //string list = String.Empty;
             List<string> ItemDescriptionList = new List<string>();
             foreach (Item itm in _items)
             {
                 ItemDescriptionList.Add(itm.ShortDescription);
             }
 
-            list = string.Join(",", ItemDescriptionList);
+            string list = string.Join(",", ItemDescriptionList);
             return list;
         }
     }

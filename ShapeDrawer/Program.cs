@@ -84,7 +84,7 @@ namespace ShapeDrawer;
                 SplashKit.RefreshScreen();
                 if (SplashKit.KeyTyped(KeyCode.OKey))
                 {
-                    try{myDrawing.Load("TestDrawing2.txt");} //if the file existed with the right name
+                    try{myDrawing.Load("TestDrawing.txt");} //if the file existed with the right name
                     catch(Exception e) {Console.Error.WriteLine("Loading file error {0}", e.Message);}
                 }
                 SplashKit.RefreshScreen();

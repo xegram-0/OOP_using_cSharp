@@ -1,11 +1,7 @@
-using System;
-
 namespace SwinAdventure;
-
 public class IdentifiableObj 
 {
-   private List<string> _identifiers;
-
+   private readonly List<string> _identifiers;
    public IdentifiableObj(string[] indents)
    {
       _identifiers = new List<string>();
@@ -14,39 +10,19 @@ public class IdentifiableObj
          AddIdentifier(ident);
       }
    }
-
    public bool AreYou(string id)
    {
       if (_identifiers.Contains(id.ToLower()))
       {
          return true;
       }
-      else
-      {
-         return false;
-      }
+      return false;
    }
-   
-   public string FirstId //TYPE FOR FIRSID
-   {
-      get
-      {
-         if (_identifiers.Count > 0)
-         {
-            return _identifiers[0];
-         }
-         else
-         {
-            return null;
-         }
-      }
-   }
-   
+   public string FirstId => _identifiers.Count > 0 ? _identifiers[0] : string.Empty;
    public void AddIdentifier(string id)
    {
      _identifiers.Add(id.ToLower());
    }
-
    public void PrivilegeEscalation(string pin)
    {
       if (pin == "2476")
@@ -55,17 +31,9 @@ public class IdentifiableObj
          
       }
    }
-
    public void RemoveIdentifier(string id)
    {
       _identifiers.Remove(id.ToLower());
    }
-
-   public int IdentCount
-   {
-      get
-      {
-         return _identifiers.Count;
-      }
-   }
+   public int IdentCount => _identifiers.Count;
 }
