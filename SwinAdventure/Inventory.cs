@@ -1,12 +1,12 @@
 ﻿namespace SwinAdventure;
-public class Inventory 
+public class Inventory : GameObj
 {
     private List<Item> _items;
-    private string[] _idents;
-    public Inventory(string[] idents, string name, string description)
+    //private string[] _idents;
+    public Inventory() : base(new string [] {"inventory"}, "inventory", "player's inventory") 
     {
         _items = new List<Item>();
-        _idents = idents;
+        //_idents = idents;
     }
 
     public bool HasItem(string id)

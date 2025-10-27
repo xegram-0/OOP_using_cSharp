@@ -4,7 +4,6 @@ namespace SwinAdventure;
 public class Item : GameObj
 {
    public Item(string[] idents, string name, string description) :base(idents, name, description){ }
-
    public override string FullDescription => Description;
    
 }

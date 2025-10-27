@@ -45,17 +45,39 @@
                 }
             }
             catch(Exception problem) {Console.Error.WriteLine("Loading file error {0}", problem.Message);}
-            
+
+            List<IHaveInventory> myContainers = new List<IHaveInventory>();
+            myContainers.Add(testPlayer);
+            Bag testBag = new Bag(["bag", "tool"], "Tool bag", "A bag with tools");
+            Item testItem = new Item(["stew", "beef"], "A beef stew", "A hearty beef stew");
+            testBag.Inventory().Put(testItem);
+            myContainers.Add(testBag);
+
+            for (int i = 0; i < myContainers.Count; i++)
+            {
+                Console.WriteLine(myContainers[i].FullDescription);
+                /*
+                 * for (int i = 0; i < myContainers.Count; i++)
+                   {
+                       if (myContainers[i] is Player testPlayer)
+                           Console.WriteLine(testPlayer.FullDescription);
+                       else if (myContainers[i] is Bag testBag)
+                           Console.WriteLine(testBag.FullDescription);
+                   }
+                   
+                 */
+            }
             /*
              2 ref points to 1 obj, if 1 ref take the stuff, the obj loses the stuff too
             Player player1 = new Player("God", "an explorer");
             Player player2 = player1;
-            
+
             player1.Inventory.Put(item1);
             player2.Inventory.Take("silver");
             Console.WriteLine(player1.FullDescription);
             Console.WriteLine(player2.FullDescription);
             */
+
         }
     }
 }

@@ -1,10 +1,11 @@
 namespace SwinAdventure;
-public class Player:GameObj
+public class Player:GameObj, IHaveInventory
 {
     private Inventory _inventory;
     public Player(string name, string description) : base(["me", "inventory" ], name, description) // ID is set to "me" and "inventory"
     {
-        _inventory = new Inventory(["inventory"], "inventory", "Player's inventory");
+        //_inventory = new Inventory(["inventory"], "inventory", "Player's inventory");
+        _inventory = new Inventory();
     } 
      public Inventory Inventory{ get => _inventory; }
      public GameObj Locate(string id)

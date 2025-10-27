@@ -11,7 +11,8 @@ public class InventoryTests
     [SetUp]
     public void Setup()
     {
-        _inventory = new Inventory(new[] { "bag","BAG"} , "Bag", "A BIG BAG");
+        //_inventory = new Inventory(new[] { "bag","BAG"} , "Bag", "A BIG BAG");
+        _inventory = new Inventory();
         _sword = new Item(new[]{"sword", "SWORD"}, "Sword", "A LONG SWORD");
     }
 
