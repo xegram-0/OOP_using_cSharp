@@ -9,7 +9,7 @@ public class Player:GameObj, IHaveInventory
         
     } 
      public Inventory Inventory{ get => _inventory; }
-     public GameObj Locate(string id)
+     public GameObj? Locate(string id)
      {
          /*
           * Give ID, if ID is about you, return you - I am here.

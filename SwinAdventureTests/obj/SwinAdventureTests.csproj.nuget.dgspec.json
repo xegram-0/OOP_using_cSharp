@@ -1,94 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventureTests/SwinAdventureTests.csproj": {}
+    "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventureTests\\SwinAdventureTests.csproj": {}
   },
   "projects": {
-    "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj": {
+    "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventureTests\\SwinAdventureTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj",
-        "projectName": "SwinAdventure",
-        "projectPath": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj",
-        "packagesPath": "/home/ted/.nuget/packages/",
-        "outputPath": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/ted/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "/usr/lib/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventureTests/SwinAdventureTests.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventureTests/SwinAdventureTests.csproj",
+        "projectUniqueName": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventureTests\\SwinAdventureTests.csproj",
         "projectName": "SwinAdventureTests",
-        "projectPath": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventureTests/SwinAdventureTests.csproj",
-        "packagesPath": "/home/ted/.nuget/packages/",
-        "outputPath": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventureTests/obj/",
+        "projectPath": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventureTests\\SwinAdventureTests.csproj",
+        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventureTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/ted/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj": {
-                "projectPath": "/home/ted/RiderProjects/OOP_using_cSharp/SwinAdventure/SwinAdventure.csproj"
+              "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventure\\SwinAdventure.csproj": {
+                "projectPath": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventure\\SwinAdventure.csproj"
               }
             }
           }
@@ -103,7 +48,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -111,7 +56,7 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.14.1, )"
+              "version": "[18.0.0, )"
             },
             "NUnit": {
               "target": "Package",
@@ -150,7 +95,72 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventure\\SwinAdventure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventure\\SwinAdventure.csproj",
+        "projectName": "SwinAdventure",
+        "projectPath": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventure\\SwinAdventure.csproj",
+        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nguye\\RiderProjects\\OOP_using_cSharp\\SwinAdventure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
