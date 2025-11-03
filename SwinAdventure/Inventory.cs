@@ -50,7 +50,7 @@ public class Inventory : GameObj
             return list;
         }
     }
-
+    public List<Item> ItemsObjLit => _items;
     public void RemoveItem(Item itm)
     {
         _items.Remove(itm);

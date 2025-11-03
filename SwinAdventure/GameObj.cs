@@ -1,3 +1,5 @@
+using System.ComponentModel.Design.Serialization;
+
 namespace SwinAdventure;
 public abstract class GameObj : IdentifiableObj
 {

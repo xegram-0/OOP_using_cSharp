@@ -6,6 +6,7 @@ public class Player:GameObj, IHaveInventory
     {
         //_inventory = new Inventory(["inventory"], "inventory", "Player's inventory");
         _inventory = new Inventory();
+        
     } 
      public Inventory Inventory{ get => _inventory; }
      public GameObj Locate(string id)
