@@ -37,5 +37,5 @@ public class  Bag :Item, IHaveInventory
         return null;
     }
     public Inventory Inventory() => _inventory;
-    public override string FullDescription => $"In the {Name} you can see: \n {_inventory.ItemList}";
+    public override string FullDescription => $"In the {Name.ToLower()} you can see: {_inventory.ItemList.ToLower()}";
 }

@@ -7,8 +7,8 @@
             Console.WriteLine("Hello World!");
             Player testPlayer = new Player("James", "an explorer");
 
-            Item item1 = new Item([ "silver", "hat" ], "A silver hat", "A very shiny silver hat");
-            Item item2 = new Item(["light", "torch" ], "a torch", "a torch to light the path");
+            Item item1 = new Item([ "silver", "hat" ], "Silver hat", "A very shiny silver hat");
+            Item item2 = new Item(["light", "torch" ], "Torch", "A torch to light the path");
             
             testPlayer.Inventory.Put(item1);
             testPlayer.Inventory.Put(item2);
@@ -63,23 +63,27 @@
             string userName = Console.ReadLine();
             Console.WriteLine("Describe your character");
             string userDescription = Console.ReadLine();
+            
             Player userPlayer = new Player(userName, userDescription);
             userPlayer.Inventory.Put(item1);
             userPlayer.Inventory.Put(item2);
-            Bag userBag = new Bag(["bag", "money"], "A money bag", "A bag full of money");
+            
+            Bag userBag = new Bag(["bag", "money"], "Money bag", "A bag full of money");
+            
             userPlayer.Inventory.Put(userBag);
             userBag.Inventory().Put(testItem);
             LookCommand userCommand = new LookCommand([""]);
             while (true)
             {
-                Console.WriteLine("Enter a command");
+                    
+                Console.WriteLine("Enter a command: ");
                 string command = Console.ReadLine();
-                if (command.ToLower() == "exit")
+                if (command.ToLower() == "exit") //remove the case sensitive
                 {
                     break;
                 }
-
-                string[] splitCommand = command.Split(" ");
+                
+                string[] splitCommand = command.ToLower().Split(new[] {' ', '-'}); //VERIFICATION
                 Console.WriteLine(userCommand.Execute(userPlayer, splitCommand));
             }
             /*
@@ -106,7 +110,7 @@
 
             //Verification
             List<IHaveInventory> VerificationContainer = new List<IHaveInventory>();
-            Player p1 = new Player("Abe", "Construstor");
+            Player p1 = new Player("Abe", "Constructor");
             Player p2 = new Player("Ben", "Teacher");
             Player p3 = new Player("Caleb", "Banker");
             Player p4 = new Player("Diana", "Warrior");
@@ -162,7 +166,7 @@
             VerificationContainer.Add(b7);
 
             //IdentCount is already present in IdenfitiableObj
-            //a, b are temporary variables for the whole stuff, it runs on introsort (n log n)
+            //a, b are temporary variables for the whole stuff, it runs on quick sort (n log n)
             VerificationContainer.Sort((a, b) => a.IdentCount.CompareTo(b.IdentCount));
             foreach (var item in VerificationContainer)
             {

@@ -8,7 +8,7 @@ public class Player:GameObj, IHaveInventory
         _inventory = new Inventory();
         
     } 
-     public Inventory Inventory{ get => _inventory; }
+     public Inventory Inventory => _inventory;
      public GameObj? Locate(string id)
      {
          /*
@@ -26,9 +26,8 @@ public class Player:GameObj, IHaveInventory
      {
          get
          {
-             return $"You are {Name} {base.FullDescription}\n" 
-                    + "You are carrying: \n" 
-                    + _inventory.ItemList;
+             return $"You are {Name} - {base.FullDescription}\n" 
+                    + "You are carrying: " + _inventory.ItemList;
          } 
      }
      public override void SaveTo(StreamWriter writer)

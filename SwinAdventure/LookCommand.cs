@@ -1,9 +1,7 @@
 ﻿namespace SwinAdventure;
-
 public class LookCommand(string[] ids):Command(ids)
 {
     //public LookCommand(string[] ids):base(ids){} - Convert to primary constructor
-
     public override string Execute(Player p, string[] text)
     {
         if(text.Length != 3 && text.Length != 5)
@@ -26,17 +24,16 @@ public class LookCommand(string[] ids):Command(ids)
             return LookAtIn(text[2],p);
         else if (text.Length == 5)
         {
-            var result = FetchContainer(p, text[4]);
+            var result = FetchContainer(p, text[4]); //don't ask me why the ide said this is good
             if (result == null)
             {
                 return "I cannot find the " + text[4];
             }
             return LookAtIn(text[2], result);
         }
-
         return "There is an error in my program";
     }
-    private IHaveInventory? FetchContainer(Player p, string containerId) //?: the compiler that the method might return nul
+    private IHaveInventory? FetchContainer(Player p, string containerId) //?: the compiler that the method might return null
     {
         IHaveInventory? container =  p.Locate(containerId) as IHaveInventory;
         //~container = obj as IHaveInventory;
@@ -47,6 +44,6 @@ public class LookCommand(string[] ids):Command(ids)
     {
         GameObj? item = container.Locate(thingId);
         if (item == null) { return "I cannot find the " + thingId; }
-        return item.Description;
+        return item.FullDescription;
     }
 }

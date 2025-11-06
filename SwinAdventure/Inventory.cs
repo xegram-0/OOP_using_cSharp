@@ -43,10 +43,10 @@ public class Inventory : GameObj
             List<string> ItemDescriptionList = new List<string>();
             foreach (Item itm in _items)
             {
-                ItemDescriptionList.Add(itm.ShortDescription);
+                ItemDescriptionList.Add(itm.ShortDescription.ToLower());
             }
 
-            string list = string.Join(",", ItemDescriptionList);
+            string list = string.Join(", ", ItemDescriptionList);
             return list;
         }
     }

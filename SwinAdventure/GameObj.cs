@@ -12,7 +12,7 @@ public abstract class GameObj : IdentifiableObj
     }
     public string Name => _name;
     public string Description => _description;
-    public string ShortDescription => $"{_name} {FirstId}";
+    public string ShortDescription => $"{_name}";
     public virtual string FullDescription => Description; //Not description
     public virtual void SaveTo(StreamWriter writer)
     {
