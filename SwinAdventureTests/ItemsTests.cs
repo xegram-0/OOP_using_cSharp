@@ -11,7 +11,7 @@ namespace SwinAdventureTests
         [SetUp]
         public void Setup()
         {
-            _items = new Item(new string[] { "sword", "swo"}, "Sword", "Lord of the word");
+            _items = new Item(["sword", "swo"], "Sword", "Lord of the word");
         }
 
         [Test]

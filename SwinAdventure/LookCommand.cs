@@ -4,25 +4,29 @@ public class LookCommand(string[] ids):Command(ids)
     //public LookCommand(string[] ids):base(ids){} - Convert to primary constructor
     public override string Execute(Player p, string[] text)
     {
+        if (text.Length == 1 && text[0].ToLower() == "look")
+        {
+            return LookAtIn("Location", p); 
+        }
         if(text.Length != 3 && text.Length != 5)
         {
             return "I don't know how to look like that";
         }
-        else if (text[0] != "look")
+        if (text[0] != "look")
         {
             return "Error in look input";
         }
-        else if (text[1] != "at")
+        if (text[1] != "at")
         {
             return "What do you want to look at?";
         }
-        else if (text.Length == 5 && text[3] != "in")
+        if (text.Length == 5 && text[3] != "in")
         {
             return "What do you want to look in?";
         }
-        else if (text.Length == 3)
+        if (text.Length == 3)
             return LookAtIn(text[2],p);
-        else if (text.Length == 5)
+        if (text.Length == 5)
         {
             var result = FetchContainer(p, text[4]); //don't ask me why the ide said this is good
             if (result == null)

@@ -1,10 +1,16 @@
 namespace SwinAdventure;
 public class Player:GameObj, IHaveInventory
 {
-    private Inventory _inventory;
+    private readonly Inventory _inventory;
+    private Location _location;
+
+    public Location Location
+    {
+        get => _location;
+        set => _location = value;
+    }
     public Player(string name, string description) : base(["me", "inventory" ], name, description) // ID is set to "me" and "inventory"
     {
-        //_inventory = new Inventory(["inventory"], "inventory", "Player's inventory");
         _inventory = new Inventory();
         
     } 
@@ -19,25 +25,23 @@ public class Player:GameObj, IHaveInventory
          if (AreYou(id))
          {
              return this; // Return the instance of the current obj
-         } 
-         return Inventory.Fetch(id);
+         }
+
+         GameObj item = _inventory.Fetch(id);
+         if (item != null){ return item; }
+         if (_location != null){ return _location; }
+         return null;
      }
-     public override string FullDescription
-     {
-         get
-         {
-             return $"You are {Name} - {base.FullDescription}\n" 
-                    + "You are carrying: " + _inventory.ItemList;
-         } 
-     }
+     public override string FullDescription => $"You are {Name} - {base.FullDescription}\n" + 
+                                               "You are carrying: " + _inventory.ItemList;
      public override void SaveTo(StreamWriter writer)
      {
          base.SaveTo(writer);
          writer.WriteLine(_inventory.ItemList);
          
          //Verification
-         writer.WriteLine("Created by Hong Nhan Nguyen");
-         writer.WriteLine("ID: 102632476");
+         writer.WriteLine("Created by NHN");
+         writer.WriteLine("ID: isSomething");
 
      }
      public override void LoadFrom(StreamReader reader)

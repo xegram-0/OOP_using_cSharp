@@ -1,13 +1,14 @@
 namespace SwinAdventure;
 
-public class Locations(string []ids, string name, string description) : GameObj(ids, name, description), IHaveInventory
+public class Location(string name, string description) : GameObj(["location"], name, description), IHaveInventory
 {
     private readonly Inventory _inventory = new Inventory();
+    public Inventory Inventory => _inventory;
     public GameObj Locate(string id)
     {
         if (AreYou(id))
         {
-            return _inventory;
+            return this;
         }
         return Inventory.Fetch(id);
     }
@@ -18,7 +19,7 @@ public class Locations(string []ids, string name, string description) : GameObj(
         {
             string nameDescription;
             string inventoryDescription;
-            if (name != null && Name != "")
+            if (name != null && name != "")
             {
                 nameDescription = name;
             }
@@ -27,7 +28,7 @@ public class Locations(string []ids, string name, string description) : GameObj(
                 nameDescription = "An unknown location";
             }
 
-            if (_inventory != null && _inventory.ItemList != null)
+            if (_inventory is { ItemList: {} }) // if (_inventory != null && _inventory.ItemList != null) 
             {
                 inventoryDescription = _inventory.ItemList;
             }
@@ -37,9 +38,8 @@ public class Locations(string []ids, string name, string description) : GameObj(
             }
 
             return "You are in " + nameDescription + ". " +
-                   base.FullDescription +
-                   "\n Here, you can see: " + inventoryDescription;;
+                   base.FullDescription + "Here, you can see: " + inventoryDescription;
         }
     }
-    private Inventory Inventory => _inventory;
+    
 }

@@ -14,6 +14,8 @@ public class PlayerTest
         Item item2 = new Item([ "light", "torch"], "a torch", "a torch to light the path");
         _testPlayer.Inventory.Put(item1);
         _testPlayer.Inventory.Put(item2);
+        Location _testLocation = new Location("New York", "A city of liberty");
+        _testPlayer.Location = _testLocation;
     }
 
     [Test]
@@ -39,6 +41,12 @@ public class PlayerTest
     [Test]
     public void PlayerFullDescription()
     {
-        Assert.That(_testPlayer.FullDescription, Is.EqualTo($"You are James an explorer\n" + "You are carrying: \n" + "A silver hat silver,a torch light"));
+        Assert.That(_testPlayer.FullDescription, Is.EqualTo($"You are James - an explorer\n" + "You are carrying: " + "a silver hat, a torch"));
+    }
+
+    [Test]
+    public void LocateItemInLocation()
+    {
+        //Assert.That(_testPlayer.Locate(_testPlayer.Location), Is.EqualTo("New York"));
     }
 }
