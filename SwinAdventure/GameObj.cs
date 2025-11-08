@@ -1,11 +1,9 @@
-using System.ComponentModel.Design.Serialization;
-
 namespace SwinAdventure;
 public abstract class GameObj : IdentifiableObj
 {
     private string _name;
     private string _description;
-    public GameObj(string[] ids, string name, string description) : base(ids)
+    protected GameObj(string[] ids, string name, string description) : base(ids)
     {
         _name = name;
         _description = description;

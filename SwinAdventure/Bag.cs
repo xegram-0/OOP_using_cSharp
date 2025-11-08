@@ -18,6 +18,7 @@ public class  Bag :Item, IHaveInventory
         {
             return this;
         }
+
         if (_inventory.HasItem(id))
         {
             return _inventory.Fetch(id);

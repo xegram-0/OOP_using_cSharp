@@ -1,5 +1,5 @@
 James
 an explorer
-a silver hat, a torch
-Created by Hong Nhan Nguyen
-ID: 102632476
+silver hat, torch
+Created by NHN
+ID: isSomething

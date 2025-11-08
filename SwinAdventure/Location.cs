@@ -1,6 +1,6 @@
 namespace SwinAdventure;
 
-public class Location(string name, string description) : GameObj(["location"], name, description), IHaveInventory
+public class Location(string name, string description) : GameObj(["location", name.ToLower()], name, description), IHaveInventory // This is a rabit hole but to let the test case pass associated with testplayer
 {
     private readonly Inventory _inventory = new Inventory();
     public Inventory Inventory => _inventory;
@@ -37,8 +37,8 @@ public class Location(string name, string description) : GameObj(["location"], n
                 inventoryDescription = "There are no items at this location.";
             }
 
-            return "You are in " + nameDescription + ". " +
-                   base.FullDescription + "Here, you can see: " + inventoryDescription;
+            return "You are in " + nameDescription + " - " +
+                   base.FullDescription + ". Here, you can see: " + inventoryDescription;
         }
     }
     

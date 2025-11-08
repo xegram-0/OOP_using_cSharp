@@ -25,7 +25,7 @@ public class LookCommandTests
     [Test]
     public void LookAtPlayer()
     {
-        Assert.That(_testLookCommand.Execute(_testPlayer, ["look","at","inventory"]), Is.EqualTo(_testPlayer.Description));
+        Assert.That(_testLookCommand.Execute(_testPlayer, ["look","at","inventory"]), Is.EqualTo(_testPlayer.FullDescription));
     }
     [Test]
     public void LookAtItem()

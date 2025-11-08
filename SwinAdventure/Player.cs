@@ -29,7 +29,13 @@ public class Player:GameObj, IHaveInventory
 
          GameObj item = _inventory.Fetch(id);
          if (item != null){ return item; }
-         if (_location != null){ return _location; }
+         //GameObj located = Location.Locate(id);
+         if (_location != null)
+         {
+             var found = _location.Locate(id);
+             if (found != null)
+                 return found;
+         }
          return null;
      }
      public override string FullDescription => $"You are {Name} - {base.FullDescription}\n" + 

@@ -1,24 +1,19 @@
 ﻿namespace SwinAdventure;
 public class Inventory : GameObj
 {
-    private List<Item> _items;
-    //private string[] _idents;
-    public Inventory() : base(new string [] {"inventory"}, "inventory", "player's inventory") 
+    private List<Item> _items =  new List<Item>();
+    public Inventory() : base(["inventory"], "inventory", "player's inventory") 
     {
         _items = new List<Item>();
-        //_idents = idents;
     }
-
     public bool HasItem(string id)
     {
         return _items.Any(item => item.AreYou(id)); //Are there any items that satisfy the condition based on id
     }
-
     public void Put(Item itm)
     {
         _items.Add(itm);
     }
-
     public Item Take(string id)
     {
         Item item = _items.FirstOrDefault(i => i.AreYou(id)); //Find first instance of i that i is based on id
@@ -28,7 +23,6 @@ public class Inventory : GameObj
         }
         return item;
     }
-
     public Item Fetch(string id)
     {
         return _items.FirstOrDefault(i => i.AreYou(id));
@@ -55,7 +49,6 @@ public class Inventory : GameObj
     {
         _items.Remove(itm);
     }
-
    public bool Put_ItemWithLimit(Item itm)
     {
         if (itm.IdentCount <= 3)
@@ -63,11 +56,6 @@ public class Inventory : GameObj
             _items.Add(itm);
             return true;
         }
-
         return false;
     }
 }
-/*
- * You SET THE FREAKING NAME WITH THE S INSTEAD OF NON-S (Items)
- * WHICH LEADS TO THE INCONSISTENT WITH THE UML
-*/

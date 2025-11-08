@@ -55,8 +55,8 @@ public class InventoryTests
 
         string itemList = _inventory.ItemList;
         
-        Assert.That(itemList.Contains("Bottle"), Is.True);
-        Assert.That(itemList.Contains("Bread"), Is.True);
+        Assert.That(itemList.Contains("bottle"), Is.True);
+        Assert.That(itemList.Contains("bread"), Is.True);
         //ItemList takes the name not the other things if this is confusing
     }
 

@@ -39,7 +39,7 @@ public class BagTest
     [Test]
     public void TestBagFullDescription()
     {
-        Assert.That(_bag.FullDescription, Is.EqualTo($"In the {_bag.Name} you can see: \n {_bag.Inventory().ItemList}"));
+        Assert.That(_bag.FullDescription, Is.EqualTo($"In the {_bag.Name.ToLower()} you can see: {_bag.Inventory().ItemList}"));
     }
     [Test]
     public void BagInBag()

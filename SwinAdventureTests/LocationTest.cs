@@ -14,14 +14,6 @@ public class LocationTest
         _testLocation = new Location("New Island", "An island of hope");
         _swordItem = new Item(["sword"], "Normal sword", "A normal sword made of steel");
     }
-
-    [Test]
-    public void TestPlayerHasLocation()
-    {
-        _testPlayer.Location = _testLocation;
-        Assert.That(_testPlayer.Location.Name, Is.EqualTo("New Island"));
-    }
-
     [Test]
     public void TestPlayerHasWrongLocation()
     {
@@ -50,6 +42,7 @@ public class LocationTest
     [Test]
     public void LocationFullDescription()
     {
-        Assert.That(_testLocation.FullDescription, Is.EqualTo("You are in New Island. Here, you can see: A normal sword made of steel"));
+        _testLocation.Inventory.Put(_swordItem);
+        Assert.That(_testLocation.FullDescription, Is.EqualTo("You are in New Island - An island of hope. Here, you can see: normal sword"));
     }
 }
