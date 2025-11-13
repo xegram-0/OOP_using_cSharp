@@ -17,7 +17,7 @@ public class MoveCommand :Command
 
         if (text.Length == 3 && text[1] != "to")
         {
-            return "Destination missing";
+            return "Only to where";
         }
 
         string destinationID = "";
