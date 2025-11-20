@@ -1,9 +1,9 @@
 namespace SwinAdventureTests;
 using SwinAdventure;
 [TestFixture]
-public class TestPath
+public class PathTests
 {
-    private Path _path;
+    private SwinAdventure.Path _path;
     private Player _player;
     private Location _location;
     private Location _location2;
@@ -13,8 +13,8 @@ public class TestPath
         _player = new Player("James", "an explorer");
         _location = new Location("sea", "sea with lots of fish");
         _location2 = new Location("mountain", "mountain with lots of cliffs");
-        _path = new Path(["north", "the north"], "north", 
-            "path to the sea", _location2, _location);
+        _path = new Path(["west", "the west"], "west", 
+            "path to the sea", _location, _location2);
         _location.AddPath(_path);
         _player.Location = _location;
     }
@@ -27,18 +27,18 @@ public class TestPath
     [Test]
     public void TestPathSource()
     {
-        Assert.That(_path.Source, Is.EqualTo(_location2));
+        Assert.That(_path.Source, Is.EqualTo(_location));
     }
     [Test]
     public void TestPathDestination()
     {
-        Assert.That(_path.Destination, Is.EqualTo(_location));
+        Assert.That(_path.Destination, Is.EqualTo(_location2));
     }
 
     [Test]
     public void TestPathLocate()
     {
-        Assert.That(_player.Locate("north"), Is.EqualTo(_path));
+        Assert.That(_player.Locate("west"), Is.EqualTo(_path.Destination));
     }
 
     [Test]
@@ -56,7 +56,7 @@ public class TestPath
     [Test]
     public void TestPathList()
     {
-        Assert.That(_location.PathList, Is.EqualTo("You can reach: north"));
+        Assert.That(_location.PathList, Is.EqualTo("You can reach: west"));
     }
 
     [Test]

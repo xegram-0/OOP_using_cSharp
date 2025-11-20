@@ -43,7 +43,6 @@ public class LookCommand(string[] ids):Command(ids)
         //~container = obj as IHaveInventory;
         return container;
     }
-
     private string LookAtIn(string thingId, IHaveInventory container)
     {
         GameObj? item = container.Locate(thingId);

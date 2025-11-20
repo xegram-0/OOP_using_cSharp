@@ -9,6 +9,7 @@
 
             Item item1 = new Item([ "silver", "hat" ], "Silver hat", "A very shiny silver hat");
             Item item2 = new Item(["light", "torch" ], "Torch", "A torch to light the path");
+            Item item3 = new Item([ "coat", "COAT" ], "Coat", "A coat");
             
             testPlayer.Inventory.Put(item1);
             testPlayer.Inventory.Put(item2);
@@ -67,12 +68,31 @@
             Player userPlayer = new Player(userName, userDescription);
             userPlayer.Inventory.Put(item1);
             userPlayer.Inventory.Put(item2);
-            
+            Location _location = new Location("church", "many prayers go here");
+            Location _location2 = new Location("pagoda", "many monks go here");
             Bag userBag = new Bag(["bag", "money"], "Money bag", "A bag full of money");
-            
+            Path pathToPagoda = new Path(["west", "the west"], "west", 
+                "journey to the west", _location, _location2);
+            Path pathToChurch = new Path(["east", "the east"], "east", 
+                "journey to the east", _location2, _location);
+            _location.Inventory.Put(item3);
+            _location.Inventory.Put(item2);
+            _location.AddPath(pathToPagoda);
+            _location2.AddPath(pathToChurch);
+
+            userPlayer.Location = _location;
+
+                
             userPlayer.Inventory.Put(userBag);
             userBag.Inventory().Put(testItem);
-            LookCommand userCommand = new LookCommand([""]);
+            Console.WriteLine(userPlayer.PlayerInventoryCount);
+
+            CommandBoss theCommand = new CommandBoss();
+            LookCommand lookCommand = new LookCommand(["look"]);
+            MoveCommand moveCommand = new MoveCommand(["move"]);
+            
+            theCommand.AddCommand(lookCommand);
+            theCommand.AddCommand(moveCommand);
             while (true)
             {
                     
@@ -84,7 +104,7 @@
                 }
                 
                 string[] splitCommand = command.ToLower().Split(new[] {' ', '-'}); //VERIFICATION
-                Console.WriteLine(userCommand.Execute(userPlayer, splitCommand));
+                Console.WriteLine(theCommand.Execute(userPlayer, splitCommand));
             }
             /*
                 * for (int i = 0; i < myContainers.Count; i++)

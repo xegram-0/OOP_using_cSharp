@@ -28,7 +28,6 @@ public class IdentifiableObj
       if (pin == "2476")
       {
          _identifiers[0] = "0007";
-         
       }
    }
    public void RemoveIdentifier(string id)

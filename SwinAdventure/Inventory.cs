@@ -58,4 +58,5 @@ public class Inventory : GameObj
         }
         return false;
     }
+   public int ItemCount => _items.Count;
 }

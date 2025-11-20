@@ -3,7 +3,7 @@ public class Player:GameObj, IHaveInventory
 {
     private readonly Inventory _inventory;
     private Location _location;
-
+    
     public Location Location
     {
         get => _location;
@@ -37,6 +37,12 @@ public class Player:GameObj, IHaveInventory
                  return found;
          }
          return null;
+     }
+    //Verification 
+     public string PlayerInventoryCount
+     {
+         get => $"Player has {_inventory.ItemCount} items: {_inventory.ItemList}\n" +
+                $"{Location.LocationInventoryCount}";
      }
      public override string FullDescription => $"You are {Name} - {base.FullDescription}\n" + 
                                                "You are carrying: " + _inventory.ItemList;

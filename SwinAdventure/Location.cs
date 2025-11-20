@@ -1,6 +1,7 @@
 namespace SwinAdventure;
 
-public class Location(string name, string description) : GameObj(["location", name.ToLower()], name, description), IHaveInventory // This is a rabit hole but to let the test case pass associated with testplayer
+public class Location(string name, string description) : 
+    GameObj(["location", name.ToLower()], name, description), IHaveInventory // This is a rabbit hole but to let the test case pass associated with testplayer
 {
     private readonly Inventory _inventory = new Inventory();
     public Inventory Inventory => _inventory;
@@ -11,9 +12,21 @@ public class Location(string name, string description) : GameObj(["location", na
         {
             return this;
         }
-        return Inventory.Fetch(id);
-    }
+        var fetchedItem = Inventory.Fetch(id);
+        if (fetchedItem != null)
+        {
+            return fetchedItem;
+        }
 
+        foreach (var path in _path)
+        {
+            if (path.AreYou(id))
+            {
+                return path;
+            }
+        }
+        return null;
+    }
     public override string FullDescription
     {
         get
@@ -37,13 +50,11 @@ public class Location(string name, string description) : GameObj(["location", na
             {
                 inventoryDescription = "There are no items at this location.";
             }
-
             return "You are in " + nameDescription + " - " +
                    base.FullDescription + ". Here, you can see: " + inventoryDescription;
         }
     }
     public void AddPath(Path path) {_path.Add(path);}
-
     public string PathList
     {
         get
@@ -52,18 +63,17 @@ public class Location(string name, string description) : GameObj(["location", na
             {
                 return "No paths lead to other locations";
             }
-
             string path = "You can reach: ";
             for (int i = 0; i < _path.Count; i++)
             {
                 path += _path[i].Name;
-                if (i < _path.Count - 1)
-                {
-                    path += ", ";
-                }
             }
             return path;
         }
-            
+    }
+    //Verification
+    public string LocationInventoryCount
+    {
+        get => $"{name} has {_inventory.ItemCount} items: {_inventory.ItemList}";
     }
 }

@@ -2,9 +2,9 @@
 
 public class Clock
 {
-    private Counter _seconds;
-    private Counter _minutes;
-    private Counter _hours;
+    private readonly Counter _seconds;
+    private readonly Counter _minutes;
+    private readonly Counter _hours;
 
     public Clock()
     {

@@ -71,6 +71,5 @@ public class LookCommandTests
         Assert.That(_testLookCommand.Execute(_testPlayer, ["look", "in", "bag"]), Is.EqualTo("What do you want to look at?"));
         Assert.That(_testLookCommand.Execute(_testPlayer, ["look", "at", "bag","at","inventory"]), Is.EqualTo("What do you want to look in?"));
         Assert.That(_testLookCommand.Execute(_testPlayer, ["look", "at", "sword","in","bag"]), Is.EqualTo("I cannot find the sword"));
-
     }
 }
