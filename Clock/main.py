@@ -1,38 +1,25 @@
 import time
-import os
-
+import tracemalloc
 from clock import Clock
-
-
-def run_clock(seconds):
+def clock(seconds):
     clock = Clock()
-    for _ in range(seconds):
+    print(f"Clock started")
+    for sec in range(seconds):
         clock.tick()
-
-
+    print(f"End")
 def main():
-    # Start the stopwatch
+    tracemalloc.start()
     start_time = time.time()
-
-    # Run the clock for 104844794 ticks
-    run_clock(104844794)
-
-    # Stop the stopwatch
+    clock(10200000)
     end_time = time.time()
+    elapsed_time = (end_time - start_time) * 1_000
+    print(f"Time elapsed: {elapsed_time:,.0f} ms")
+    current_memory, peak_memory = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
 
-    print("Python Clock - Minh An Nguyen - 104844794\n")
-    # Calculate elapsed time in microseconds
-    elapsed_time = (end_time - start_time) * 1_000_000
-    print(f"Time elapsed: {elapsed_time:,.0f} microseconds")
+    print(f"Current physical memory usage: {current_memory} bytes")
 
-    # Get the current process
-    process = psutil.Process(os.getpid())
-
-    # Display the total physical memory size allocated for the current process
-    print(f"Current physical memory usage: {process.memory_info().rss:,} bytes")
-
-    # Display peak memory statistics for the process
-    print(f"Peak physical memory usage: {process.memory_info().peak_wset:,} bytes")
+    print(f"Peak physical memory usage: {peak_memory} bytes")
 
 
 if __name__ == "__main__":

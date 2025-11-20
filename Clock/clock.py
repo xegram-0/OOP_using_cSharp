@@ -1,6 +1,4 @@
 from counter import Counter
-
-
 class Clock:
     def __init__(self):
         self._seconds = Counter("seconds")
