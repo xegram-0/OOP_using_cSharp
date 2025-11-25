@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterTask", "CounterTask\CounterTask.csproj", "{4AF5C893-F252-438A-942D-98C5B3D9EC61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeDrawing", "ShapeDrawing\ShapeDrawing.csproj", "{7113EDB4-CA1E-4E01-9F6F-80A01CD04AFD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwinAdventure", "SwinAdventure\SwinAdventure.csproj", "{B6BD38E8-1050-4E0F-95FE-A572C899427B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwinAdventureTests", "SwinAdventureTests\SwinAdventureTests.csproj", "{3F2BF894-9BD8-42FB-9A68-C4D34208F2B3}"
@@ -11,10 +9,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeDrawer", "ShapeDrawer\ShapeDrawer.csproj", "{457F5065-177D-42CC-9021-2AC03EC0D23B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockApp", "ClockApp\ClockApp.csproj", "{8E080535-BCBF-494B-9574-F3327C228BA4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlappyBird", "FlappyBird\FlappyBird.csproj", "{6BEF83E6-C3DC-4277-A031-F04BC0434DAC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freeways", "Freeways\Freeways.csproj", "{D2DC2A4C-8E1A-446B-9B72-A4EB9E154591}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreewayClone", "FreewayClone\FreewayClone.csproj", "{E9488D0C-C8EB-4355-9227-156D2CD423A0}"
 EndProject
@@ -28,10 +22,6 @@ Global
 		{4AF5C893-F252-438A-942D-98C5B3D9EC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AF5C893-F252-438A-942D-98C5B3D9EC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AF5C893-F252-438A-942D-98C5B3D9EC61}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7113EDB4-CA1E-4E01-9F6F-80A01CD04AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7113EDB4-CA1E-4E01-9F6F-80A01CD04AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7113EDB4-CA1E-4E01-9F6F-80A01CD04AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7113EDB4-CA1E-4E01-9F6F-80A01CD04AFD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6BD38E8-1050-4E0F-95FE-A572C899427B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6BD38E8-1050-4E0F-95FE-A572C899427B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6BD38E8-1050-4E0F-95FE-A572C899427B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,14 +38,6 @@ Global
 		{8E080535-BCBF-494B-9574-F3327C228BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E080535-BCBF-494B-9574-F3327C228BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E080535-BCBF-494B-9574-F3327C228BA4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6BEF83E6-C3DC-4277-A031-F04BC0434DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BEF83E6-C3DC-4277-A031-F04BC0434DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BEF83E6-C3DC-4277-A031-F04BC0434DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BEF83E6-C3DC-4277-A031-F04BC0434DAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D2DC2A4C-8E1A-446B-9B72-A4EB9E154591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2DC2A4C-8E1A-446B-9B72-A4EB9E154591}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2DC2A4C-8E1A-446B-9B72-A4EB9E154591}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2DC2A4C-8E1A-446B-9B72-A4EB9E154591}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9488D0C-C8EB-4355-9227-156D2CD423A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9488D0C-C8EB-4355-9227-156D2CD423A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9488D0C-C8EB-4355-9227-156D2CD423A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
