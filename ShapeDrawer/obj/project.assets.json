@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "SplashKit/1.2.12": {
+      "SplashKit/1.2.13": {
         "type": "package",
         "compile": {
           "lib/net9.0/SplashKitSDK.dll": {}
@@ -14,10 +14,10 @@
     }
   },
   "libraries": {
-    "SplashKit/1.2.12": {
-      "sha512": "cQKBRNnAW5LF6puCaWqctAkDNyYjJID2CWRrhaFD56D2yjxZdGyTJiObZPL9y0TCqkE4imCwFg8hPfu5kwLJOw==",
+    "SplashKit/1.2.13": {
+      "sha512": "a6MRGqdG7L74QmxLVC2QE1fD8GpiTXheFSoPOcXZpveorWJGjwoO3jyv2XPyPIzEN8tEpPvPaLQIvm3huj98cg==",
       "type": "package",
-      "path": "splashkit/1.2.12",
+      "path": "splashkit/1.2.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -27,14 +27,14 @@
         "lib/net8.0/SplashKitSDK.dll",
         "lib/net9.0/SplashKitSDK.dll",
         "readme.md",
-        "splashkit.1.2.12.nupkg.sha512",
+        "splashkit.1.2.13.nupkg.sha512",
         "splashkit.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "SplashKit >= 1.2.12"
+      "SplashKit >= 1.2.13"
     ]
   },
   "packageFolders": {
@@ -89,7 +89,7 @@
         "dependencies": {
           "SplashKit": {
             "target": "Package",
-            "version": "[1.2.12, )"
+            "version": "[1.2.13, )"
           }
         },
         "imports": [

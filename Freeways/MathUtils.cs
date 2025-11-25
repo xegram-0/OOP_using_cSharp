@@ -1,4 +1,7 @@
-﻿namespace FreewaysGame
+﻿using System;
+using System.Collections.Generic;
+
+namespace Freeways
 {
     public struct PointD { public double X; public double Y; }
     public struct LineEq { public double Slope; public double YIntercept; }

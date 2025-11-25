@@ -1,4 +1,7 @@
-﻿namespace FreewaysGame
+﻿using System;
+using System.Threading;
+
+namespace Freeways
 {
     public static class InputSimulator
     {

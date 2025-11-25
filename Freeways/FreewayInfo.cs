@@ -1,7 +1,11 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Imaging;
+using System.Threading;
+using System.Diagnostics; // Added for Process lookup
 
-namespace FreewaysGame
+
+namespace Freeways
 {
     public class FreewayInfo
     {
@@ -20,11 +24,21 @@ namespace FreewaysGame
 
         private void InitWindow()
         {
+            // Strategy 1: Find by specific Window Title "Freeways"
             Hwnd = NativeMethods.FindWindow(null, "Freeways");
+
+            // Strategy 2: If not found, find by Process Name "Freeways"
             if (Hwnd == IntPtr.Zero)
             {
-                // Attempt to find by executable process loop if class name fails, 
-                // but "Freeways" usually works for the window title.
+                Process[] processes = Process.GetProcessesByName("Freeways");
+                if (processes.Length > 0)
+                {
+                    Hwnd = processes[0].MainWindowHandle;
+                }
+            }
+
+            if (Hwnd == IntPtr.Zero)
+            {
                 throw new Exception("Freeways game window not found! Is the game running?");
             }
 
@@ -34,9 +48,10 @@ namespace FreewaysGame
             if (NativeMethods.GetWindowRect(Hwnd, out NativeMethods.RECT rect))
             {
                 // Adjust for borders roughly as Python script did
+                // Note: These offsets might need tweaking depending on your OS (Win 10 vs 11)
                 rect.Left += 8;
                 rect.Top += 32;
-                rect.Right -= 8; // Python calculated width/height dynamically, simpler here
+                rect.Right -= 8; 
                 rect.Bottom -= 8; 
                 this.Bounds = rect;
             }
@@ -72,15 +87,8 @@ namespace FreewaysGame
         private void FindMenu(int shiftSize, bool pageSwitch)
         {
             // Basic implementation: clicks top right area
-            // Python script does complex pixel scanning to find the menu bar.
-            // We will approximate the menu location relative to window width.
-            
             int menuY = Bounds.Bottom - 40;
             int menuXBase = Bounds.Left + 34; // Defaulting to first chunk
-            
-            // The Python script scans gray pixels to find the menu block. 
-            // For C# port simplicity, we'll assume standard 1920x1080 scaling or just click
-            // blindly if pixel scanning is too slow.
             
             int clickX = menuXBase + shiftSize;
             InputSimulator.ClickLeft(clickX, menuY);

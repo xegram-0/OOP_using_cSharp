@@ -1,6 +1,8 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
+using System.Drawing;
 
-namespace FreewaysGame
+namespace Freeways
 {
     public static class NativeMethods
     {
